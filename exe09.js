@@ -16,7 +16,13 @@ const products = [
   },
 ]
 
+const { question } = require('readline-sync')
+const type = question('qual tipo de carne? ')
+const quantity = question('qual quantidade? ')
+const isCard = question('Cartao do local? (S/N) ')
+
 function createCupomFiscal(type, quantity, isCard) {
+  isCard = isCard.toUpperCase() === 'S'
   const product = products.find(item => item.name === type)
   if (!product) return 'Product not found'
 
@@ -30,9 +36,4 @@ function createCupomFiscal(type, quantity, isCard) {
   }
 }
 
-console.log(createCupomFiscal('File Duplo', 6, true))
-console.log(createCupomFiscal('File Duplo', 6, false))
-console.log(createCupomFiscal('File Duplo', 5, true))
-console.log(createCupomFiscal('File Duplo', 5, false))
-console.log(createCupomFiscal('Alcatra', 5, false))
-console.log(createCupomFiscal('File', 5, false))
+console.log(createCupomFiscal(type, quantity, isCard))

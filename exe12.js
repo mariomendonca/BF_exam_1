@@ -1,8 +1,11 @@
 // Faça um programa que peça 10 números inteiros, calcule e mostre a quantidade de números pares e a quantidade de números impares.
+const { question } = require('readline-sync')
+const numbers = []
+for (let i = 0; i < 10; i++) {
+  const number = Number(question(`numero ${i + 1}? `))
+  numbers.push(number)
+}
 
-const numbers = [
-  1,3,4,5,6,33,43,22,26,23
-]
 
 function quantityOfOddAndEven(numbers) {
   const evens = []

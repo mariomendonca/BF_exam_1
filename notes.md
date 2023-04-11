@@ -1,1 +1,1 @@
-faltam o 10, 6, 16, 8
+faltam o 6, 16
